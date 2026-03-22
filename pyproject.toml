@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "django-fly-replay"
+version = "0.1.0"
+description = "Offload resource-intensive Django views to serverless Fly Machines via fly-replay"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Kátia Nakamura", email = "me@katia.dev" }]
+requires-python = ">=3.10"
+dependencies = ["django>=4.2"]
+classifiers = [
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.0",
+    "Framework :: Django :: 5.1",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+]
+
+keywords = ["django", "fly.io", "flyio", "serverless", "middleware", "fly-replay", "fly machines"]
+
+[project.urls]
+Repository = "https://github.com/katiayn/django-fly-replay"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-django",
+    "ruff",
+]
