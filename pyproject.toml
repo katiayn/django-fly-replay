@@ -28,6 +28,9 @@ keywords = ["django", "fly.io", "flyio", "serverless", "middleware", "fly-replay
 [project.urls]
 Repository = "https://github.com/katiayn/django-fly-replay"
 
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.settings"
+
 [project.optional-dependencies]
 dev = [
     "pytest",
