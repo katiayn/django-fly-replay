@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.urls import resolve, Resolver404
 
 from django_fly_replay.decorators import is_fly_replay
-from django_fly_replay.machines import get_or_create_serverless_machine
+from django_fly_replay.services import get_or_create_serverless_machine
 
 
 class FlyReplayMiddleware:

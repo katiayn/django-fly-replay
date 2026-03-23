@@ -3,7 +3,7 @@ from unittest.mock import patch
 
 from django.test import RequestFactory
 
-from django_fly_replay.machines import FlyApiError
+from django_fly_replay.exceptions import FlyApiError
 from django_fly_replay.middleware import FlyReplayMiddleware
 
 MACHINE = {"id": "fly-machine-id"}
