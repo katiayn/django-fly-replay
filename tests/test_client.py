@@ -82,3 +82,27 @@ def test_api_request_custom_timeout_overrides_setting():
     with patch("urllib.request.urlopen", return_value=_make_response({})) as mock_open:
         wait_for_machine("fly-machine-id", "destroyed", timeout=60)
     assert mock_open.call_args[1]["timeout"] == 60
+
+
+@override_settings(FLY_APP_NAME="fly-app", FLY_API_TOKEN="fly-token", FLY_API_TIMEOUT="5")
+def test_api_request_returns_none_on_empty_response():
+    from django_fly_replay.machines import get_machine
+
+    mock = MagicMock()
+    mock.__enter__ = MagicMock(return_value=mock)
+    mock.__exit__ = MagicMock(return_value=False)
+    mock.read.return_value = b""
+    with patch("urllib.request.urlopen", return_value=mock):
+        assert get_machine("fly-machine-id") is None
+
+
+@override_settings(FLY_APP_NAME="fly-app", FLY_API_TOKEN="fly-token", FLY_API_TIMEOUT="5")
+def test_api_request_returns_none_on_invalid_json():
+    from django_fly_replay.machines import get_machine
+
+    mock = MagicMock()
+    mock.__enter__ = MagicMock(return_value=mock)
+    mock.__exit__ = MagicMock(return_value=False)
+    mock.read.return_value = b"not json"
+    with patch("urllib.request.urlopen", return_value=mock):
+        assert get_machine("fly-machine-id") is None
