@@ -1,4 +1,5 @@
 # Python
+.python-version
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -13,6 +14,7 @@ env/
 
 # Testing
 .pytest_cache/
+.tox/
 .coverage
 htmlcov/
 
@@ -26,3 +28,4 @@ htmlcov/
 
 # Claude
 .claude/
+CLAUDE.md
