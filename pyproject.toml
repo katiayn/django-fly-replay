@@ -36,6 +36,7 @@ pythonpath = ["."]
 [project.optional-dependencies]
 dev = [
     "pytest",
+    "pytest-cov",
     "pytest-django",
     "ruff",
     "tox>=4",
