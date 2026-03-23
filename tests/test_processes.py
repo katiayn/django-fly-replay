@@ -4,7 +4,7 @@ from unittest.mock import patch
 from django.test import override_settings
 
 from django_fly_replay.processes import _build_process_config, create_process_machine
-from tests.test_client import _make_response
+from tests.conftest import _make_response
 
 
 # --- _build_process_config ---

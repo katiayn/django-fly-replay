@@ -1,4 +1,3 @@
-import json
 from unittest.mock import MagicMock, patch
 
 import pytest
@@ -9,15 +8,7 @@ from django_fly_replay.client import _get_setting
 from django_fly_replay.exceptions import FlyApiError
 from django_fly_replay.machines import list_machines
 
-
-def _make_response(body: dict | list, status: int = 200):
-    raw = json.dumps(body).encode()
-    mock = MagicMock()
-    mock.__enter__ = MagicMock(return_value=mock)
-    mock.__exit__ = MagicMock(return_value=False)
-    mock.read.return_value = raw
-    mock.status = status
-    return mock
+from tests.conftest import _make_response
 
 
 # --- _get_setting ---

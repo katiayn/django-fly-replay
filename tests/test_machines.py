@@ -11,7 +11,7 @@ from django_fly_replay.machines import (
     stop_machine,
     wait_for_machine,
 )
-from tests.test_client import _make_response
+from tests.conftest import _make_response
 
 
 # --- Individual machine API calls ---
