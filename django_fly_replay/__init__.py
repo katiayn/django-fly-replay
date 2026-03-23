@@ -1,4 +1,4 @@
-from django_fly_replay.decorators import fly_replay
+from django_fly_replay.decorators import fly_replay, _registry
 from django_fly_replay.exceptions import FlyApiError
 from django_fly_replay.machines import (
     create_machine,
@@ -15,6 +15,7 @@ from django_fly_replay.services import get_or_create_serverless_machine
 
 __all__ = [
     "fly_replay",
+    "_registry",
     "FlyReplayMiddleware",
     "FlyApiError",
     "list_machines",
