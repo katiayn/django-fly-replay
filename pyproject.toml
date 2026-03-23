@@ -31,6 +31,7 @@ Repository = "https://github.com/katiayn/django-fly-replay"
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "tests.settings"
+pythonpath = ["."]
 
 [project.optional-dependencies]
 dev = [
